@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/** pseudoclase :root -> global, definir variables, semantica de colores, tipos de fuentes, tamano, etc */
+:root{
+    --box-color: #075e35;
+    --secondary-color: #fff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+.title{
+    text-align: center;
+    font-family: var(--font-family);
+}
+
+
+.box{
+    background-color: var(--box-color);
+    width: 200px;
+    height: 200px;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/** media query con rangos: max-width , min-width */
+@media(min-width: 576px) and (max-width: 768px){
+    .box{
+        background-color: chocolate;
+    }
+
+    .title{
+        font-style: italic;
+    }
+}
+
+@media(max-width: 576px){
+    main{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media(min-width: 920px){
+    
+    .flexbox{
+        display: flex;
+        justify-content: space-around;
+        /** flexbox + css grid (margen) */
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    /** css grid */
+    .gridbox{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+    }
+
+    .gridbox .box:nth-child(1){
+        /**
+            1 -> primera fila (inicio)
+            2 -> donde vas empezar a colocar la columna
+            3 -> donde va terminar la fila (el numero 2 no se incluye)
+            4 -> donde va terminar la columna (el numero 3 no se incluye)
+        */
+        grid-area: 1 / 1 / 2 / 3;
+        /* grid-column: 1 / 3;
+        grid-row: 1 / 2; */
+        width: 100%;
+    }
+
+    .gridbox .box:nth-child(3){
+        grid-area: 1 / 4 / 2 / 6; /** empezamos en la columna 4 y terminamos en la 5 */
+        width: 100%;
+    }
+}
