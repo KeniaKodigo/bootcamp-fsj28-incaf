@@ -7,6 +7,7 @@ console.error("This is an error message.");
 /* alcance de variables y constante 
     let => bloque
     var => global (funcion)
+    const
 */
 let fullname = "Kenia Paiz";
 fullname = "5" + "5"; //55.6
@@ -44,13 +45,13 @@ let gato = {
 console.log("A mi gato le gusta la " + gato.listComidas[1]);
 
 //arreglo => es una coleccion de datos (posicion 0)(tipo de dato)
-let array_frutas = ["manzana", "pera", "sandia", "mora"];
+let array_frutas = ["manzana", "pera", "sandia", "mora"]; //posicion 0
 //arreglo indexado
 console.log(array_frutas[2]);
 
 //arreglo de objetos
 
-//funcion declarativa
+//funcion declarativa, de flecha, anonima (expresiva)
 //declarando
 function sendMessage(){
     console.log(fullname);
