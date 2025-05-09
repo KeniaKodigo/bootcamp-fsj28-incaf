@@ -1,9 +1,13 @@
 **Inicializando nuestro repositorio**
-`git init`
+```bash
+git init
+``` 
 
 **verificar el estado de los archivos**
-`git status`
-`git status -s`
+```bash
+git status
+git status -s
+```
 
 **agregando los archivos al repositorio**
 `git add <nombrearchivo>`
