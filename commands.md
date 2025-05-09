@@ -10,33 +10,49 @@ git status -s
 ```
 
 **agregando los archivos al repositorio**
-`git add <nombrearchivo>`
-`git add .`
-`git add --all`
+```bash
+git add <nombrearchivo>
+git add .
+git add --all
+```
 
 **agregamos los cambios al repositorio LOCAL y un comentario del cambio**
-`git commit -m <comentario>`
+```bash
+git commit -m <comentario>
+```
 
 **subiendo los cambios al repositorio remoto**
-`git push origin <ramaprincipal>`
+```bash
+git push origin <ramaprincipal>
+```
 
 ### Comandos Adicionales
 **configuracion de usuario**
-`git config user.name`
-`git config user.email`
-`git config user.name <usuariogithub>`
-`git config user.email <correogithub>`
+```bash
+git config user.name
+git config user.email
+git config user.name <usuariogithub>
+git config user.email <correogithub>
+```
 
 **verificando repositorio remoto**
-`git remote -v`
+```bash
+git remote -v
+```
 
 **agregando repositorio remoto**
-`git remote add origin <enlacerepositoriogithub>`
+```bash
+git remote add origin <enlacerepositoriogithub>
+```
 
 ### Comando sobre ramas
-`git branch`
-`git branch <nuevarama>`
+```bash
+git branch
+git branch <nuevarama>
+```
 
 **creando una nueva rama y accediendo a ella**
-`git checkout -b <nuevarama>`
-`git checkout <rama>`
+```bash
+git checkout -b <nuevarama>
+git checkout <rama>
+```
