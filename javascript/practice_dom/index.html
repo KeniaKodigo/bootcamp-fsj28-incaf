@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">PRACTICA DEL DOM</h1>
+
+    <h1 class="api-title">API DE NAVEGACION</h1>
+    <a href="#">Click!</a>
+
+    <h3>Metodos del DOM</h3>
+    <ul id="list-dom" onclick="clickAlert()">
+        <li>querySelector</li>
+        <li>getElementById</li>
+    </ul>
+
+    <button onclick="clickAlert()">Dale Click!</button>
+
+    <form action="" onsubmit="clickSubmit()">
+        <input type="text" id="name">
+        <input type="submit" value="enviar">
+    </form>
+
+    <h3>Selecciona tu lenguaje favorito</h3>
+    <select name="" id="" onchange="selectLenguaje()">
+        <option value="Javascript">Javascript</option>
+        <option value="PHP">PHP</option>
+        <option value="Python">Python</option>
+    </select>
+</body>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
