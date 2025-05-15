@@ -76,6 +76,17 @@ function selectLenguaje(){
 }
 
 
-document.addEventListener('click', function(){
-    //accion
+document.querySelector('h1').addEventListener('click', saludar)
+
+function saludar(){
+    alert("Buenas Noches, estamos conectados!")
+}
+
+//accion de inicio (lista de eventos que podemos utilizar)
+document.addEventListener('DOMContentLoaded', ()=> {
+    Swal.fire({
+        title: "Bienvenido, Esta Alerta es el inicio!",
+        icon: "success",
+        draggable: true
+    });
 })
