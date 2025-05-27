@@ -2,10 +2,14 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
-import { saludo, suma, PI } from './operaciones.js'
+//export default se le puede cambiar el nombre
+import operacionresta, { saludo, PI, calcularOperacion }  from './operaciones.js'
 
 //desestructuracion de datos
 //import (trayendo) / export (enviando)
+let result = operacionresta(10, 5);
+console.log(result);
+
 console.log(PI)
 document.querySelector('#app').innerHTML = `
   <div>
@@ -23,7 +27,23 @@ document.querySelector('#app').innerHTML = `
     <p class="read-the-docs">
       Click on the Vite logo to learn more
     </p>
+    <section>
+      <h2>Operaciones Matematicas</h2>
+
+      <input type="text" id="num1" placeholder="Numero 1">
+      <input type="text" id="num2" placeholder="Numero 2">
+
+      <label>Selecciona la operacion</label>
+      <select id="operacion">
+        <option value="suma">Suma</option>
+        <option value="resta">Resta</option>
+        <option value="multiplicacion">Multiplicacion</option>
+        <option value="division">Division</option>
+      </select>
+    </section>
   </div>
 `
-
+//llamo / ejecutado
 setupCounter(document.querySelector('#counter'))
+//evento de escucha
+document.getElementById('operacion').addEventListener('change', calcularOperacion)

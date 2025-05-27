@@ -1,13 +1,6 @@
-import { PI } from "./operaciones"
-
-/**
- * export
- * export default (predeterminado)
- */
-
-export function setupCounter(element) {
+export function setupCounter(element: HTMLButtonElement) {
   let counter = 0
-  const setCounter = (count) => {
+  const setCounter = (count: number) => {
     counter = count
     element.innerHTML = `count is ${counter}`
   }
