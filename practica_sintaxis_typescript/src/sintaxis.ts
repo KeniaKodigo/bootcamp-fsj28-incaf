@@ -44,6 +44,8 @@ export let student:{name:string, carnet:string, age:number, address?:string} = {
 //types => son elementos personalizado (definen una estructura o valores)
 //usuarios => tienen que cumplir con una estructura de datos 
 
+//tuplas => son arreglo con longitud prederterminada
+
 //definiendo valores estaticos
 type Rol = "admin" | "employee"; 
 
@@ -79,3 +81,4 @@ export let jennifer:User = {
 
 // fruits.fruta1 //manzana
 
+//elementos opcionales (?)
