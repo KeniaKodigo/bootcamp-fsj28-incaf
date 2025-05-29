@@ -4,12 +4,20 @@ import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 import { name, isStudent } from './sintaxis.ts'
 import { greeting2 } from './functions.ts'
+import { Estudiante } from './kodigo/estudiante.ts'
 
 console.log(greeting2("Juanito"))
 console.log(greeting2())
 
 console.log(`Tipo de dato de la variable es: ${typeof(name)}`)
 console.log(`Tipo de dato de la variable es: ${typeof(isStudent)}`)
+
+/***** informacion de la clase */
+let estudiante = new Estudiante("Erick Ramos",24,"El Salvador","becado","Fullstack Jr")
+console.log(estudiante) //{}
+
+console.log(estudiante.mostrarDetalles())
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">

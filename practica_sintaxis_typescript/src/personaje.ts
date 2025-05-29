@@ -77,3 +77,7 @@ personaje2.obtenerPoderes()
 
 
 //Personaje -> Villanos (hija)
+
+export class Villanos{
+
+}
