@@ -13,8 +13,11 @@ console.log(`Tipo de dato de la variable es: ${typeof(name)}`)
 console.log(`Tipo de dato de la variable es: ${typeof(isStudent)}`)
 
 /***** informacion de la clase */
-let estudiante = new Estudiante("Erick Ramos",24,"El Salvador","becado","Fullstack Jr")
+let estudiante = new Estudiante("Erick Ramos",24,"El Salvador","erick.ramos@example.test","becado","Fullstack Jr")
 console.log(estudiante) //{}
+estudiante.setEstado("Pauso Bootcamp")
+console.log(estudiante.getEstado())
+console.log(`El estudiante su financiamiento es: ${estudiante.getTipoFinanciamiento()}`)
 
 console.log(estudiante.mostrarDetalles())
 
