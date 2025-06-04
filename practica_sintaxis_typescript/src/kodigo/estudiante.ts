@@ -12,7 +12,7 @@ export class Estudiante extends AcademiaKodigo{
      * 3 alcances (dentro de la clase, fuera de la clase, clases hijas)
      * public (3)
      * protected (2) -> dentro de la clase y clases hijas
-     * private (1) -> dentro de la clase
+     * private (1) -> dentro de la clase (get->mostrar info, set->modificar)
      */
     private tipo_financiamiento:tipoEstudiante //get
     private estado:string

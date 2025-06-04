@@ -20,4 +20,8 @@ export class AcademiaKodigo{
             Edad: ${this.edad}
             Correo Electronico: ${this.email}`
     }
+
+    saludar(){
+        return "Bienvenido a la academia de Kodigo"
+    }
 }

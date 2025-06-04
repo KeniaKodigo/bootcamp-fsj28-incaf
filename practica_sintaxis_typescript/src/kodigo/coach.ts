@@ -21,5 +21,20 @@ export class Coach extends AcademiaKodigo{
         }
     }
 
+    //sobreescritura de metodos
+    mostrarDetalles(): string {
+        return "Informacion del coach"
+    }
+
+    //sobreescribir
+    saludar(): string {
+        return `Bienvenido ${this.nombre}, ya eres un coach de KODIGO :)`
+    }
+
+    //sobrecarga
+    // saludar(lema){
+    //     return "Bienvenido Coach: " + lema
+    // }
 }
+
 

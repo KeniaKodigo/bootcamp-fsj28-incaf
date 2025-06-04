@@ -5,6 +5,9 @@ import { setupCounter } from './counter.ts'
 import { name, isStudent } from './sintaxis.ts'
 import { greeting2 } from './functions.ts'
 import { Estudiante } from './kodigo/estudiante.ts'
+import { RecetaSalada } from './recetas/recetaSalada.ts'
+import { RecetaDulce } from './recetas/recetaDulce.ts'
+import { LibroRecetas } from './recetas/libroRecetas.ts'
 
 console.log(greeting2("Juanito"))
 console.log(greeting2())
@@ -20,6 +23,16 @@ console.log(estudiante.getEstado())
 console.log(`El estudiante su financiamiento es: ${estudiante.getTipoFinanciamiento()}`)
 
 console.log(estudiante.mostrarDetalles())
+console.log("*************** SECCION DE RECETAS ****************");
+
+let receta1 = new RecetaSalada("Pollo en crema",["pollo","crema","vegetales","champiñones"],"media")
+
+let receta2 = new RecetaDulce("Tres leches",["leche","leche condensada","leche evaporada","huevos"],"facil")
+//agregando las recetas al Libro
+let libroRecetas = new LibroRecetas()
+libroRecetas.agregarReceta(receta1)
+libroRecetas.agregarReceta(receta2)
+console.log(libroRecetas.recetas)
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
