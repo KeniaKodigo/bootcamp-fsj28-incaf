@@ -13,17 +13,25 @@ function App() {
    * [1] => actualizar tu estado (argumento/acciones)
    */
   const [mensaje, setMensaje] = useState("Hola") //inicializas tu estado
+  let saludar = "Hola Mundo!"
+  //declarando un estado para la lista de notas
+  const [listNotes, setListNotes] = useState([]) //inicializando el estado como arreglo vacio
+  //listNotes => ver el estado, guardar estado
+  //setListNotes => cambiar o actualizar el estado
 
   return (
     <>
-      {/** fragmento */}
-      <Encabezado />
+      {/** fragmento, pasando una prop */}
+      <Encabezado nombre="Angel" apellido="Moreno" saludar={saludar}/>
+      {/* <Encabezado nombre="Valeria" apellido="Flores"/> */}
       {/* 
         se puede reutilizar los componentes
         <Encabezado />
         <Encabezado /> */}
-      <FormNotas />
-      <ListaNotas />
+
+      {/** pasando el estado de la lista de notas como props  */}
+      <FormNotas listNotes={listNotes} setListNotes={setListNotes}/>
+      <ListaNotas listNotes={listNotes} setListNotes={setListNotes}/>
     </>
 
   )
