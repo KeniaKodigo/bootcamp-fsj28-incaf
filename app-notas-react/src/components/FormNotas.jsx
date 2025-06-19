@@ -45,7 +45,7 @@ export default function FormNotas({listNotes, setListNotes}) {
                 </div>
 
                 <div>
-                    <input type="submit" value="Guardar Nota"/>
+                    <input type="submit" className='btn btn-primary' value="Guardar Nota"/>
                 </div>
             </form>
         </div>

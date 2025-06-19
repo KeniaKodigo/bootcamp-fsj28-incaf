@@ -3,6 +3,11 @@ import './App.css'
 import Encabezado from './components/Encabezado'
 import FormNotas from './components/FormNotas'
 import ListaNotas from './components/ListaNotas'
+import FormHook from './components/FormHook'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './styles/main.css'
+
 
 //componente funcional (index nosotros vamos a modificar)
 function App() {
@@ -21,6 +26,7 @@ function App() {
 
   return (
     <>
+
       {/** fragmento, pasando una prop */}
       <Encabezado nombre="Angel" apellido="Moreno" saludar={saludar}/>
       {/* <Encabezado nombre="Valeria" apellido="Flores"/> */}
@@ -30,8 +36,12 @@ function App() {
         <Encabezado /> */}
 
       {/** pasando el estado de la lista de notas como props  */}
-      <FormNotas listNotes={listNotes} setListNotes={setListNotes}/>
-      <ListaNotas listNotes={listNotes} setListNotes={setListNotes}/>
+      {/* <FormNotas listNotes={listNotes} setListNotes={setListNotes}/> */}
+      <section className='text-success seccion-notas'>
+        <FormHook listNotes={listNotes} setListNotes={setListNotes}/>
+        <ListaNotas listNotes={listNotes} setListNotes={setListNotes}/>
+      </section>
+      
     </>
 
   )
