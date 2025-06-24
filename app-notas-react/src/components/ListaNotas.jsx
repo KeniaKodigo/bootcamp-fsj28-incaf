@@ -1,4 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
+//estilos para cada componente
+
+const TitleNotes = styled.h2`
+    color: red !important;
+    margin 1rem 0;
+    font-size: 2.3rem;
+`
 
 //componente para mostrar las notas del arreglo
 export default function ListaNotas({listNotes, setListNotes}) {

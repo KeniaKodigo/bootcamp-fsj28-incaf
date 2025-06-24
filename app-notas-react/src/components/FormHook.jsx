@@ -14,6 +14,7 @@ const Form = styled.form`
     padding: 1.5rem;
 `
 
+
 export default function FormHook({listNotes, setListNotes}) {
     const {
         register,//{objeto}
@@ -55,6 +56,7 @@ export default function FormHook({listNotes, setListNotes}) {
     return (
         <div>
             <TitleForm>Registrar Nota</TitleForm>
+            <TitleForm>otro tema...</TitleForm>
             <Form action="" onSubmit={handleSubmit(saveNote)}>
                 <div>
                     <label htmlFor="">Titulo</label>
