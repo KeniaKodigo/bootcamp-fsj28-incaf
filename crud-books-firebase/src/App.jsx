@@ -7,7 +7,7 @@ import Welcome from './components/Welcome'
 function App() {
   return (
     <>
-    {/** El componente menu, engloba todas las rutas de la aplicacion */}
+      {/** El componente menu, engloba todas las rutas de la aplicacion */}
         <Menu />
     </>
   )

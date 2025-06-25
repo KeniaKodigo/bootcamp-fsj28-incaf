@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { IoIosNotifications } from "react-icons/io";
 import { FaHome } from 'react-icons/fa';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import ListBooks from './ListBooks';
+import Welcome from './Welcome';
+import FormRegister from './FormRegister';
 
 const Header = styled.header`
     color: #fff;
@@ -29,10 +32,14 @@ export default function Menu() {
                 <nav>
                     <ul>
                         <ItemNav>
-                            <FaHome style={{color: "red"}} />
+                            <Link to="/" ><FaHome style={{color: "red"}} /></Link>
                         </ItemNav>
-                        <ItemNav>Books</ItemNav>
-                        <ItemNav>Register Book</ItemNav>
+                        <ItemNav>
+                            <Link to="/books" style={{color: "#fff", textDecoration: "none"}}>Books</Link>
+                        </ItemNav>
+                        <ItemNav>
+                            <Link to="/register" style={{color: "#fff", textDecoration: "none"}}>Register Book</Link>
+                        </ItemNav>
                         <ItemNav>Community</ItemNav>
                         <ItemNav>
                             <IoIosNotifications />
@@ -42,6 +49,13 @@ export default function Menu() {
             </Header>
 
             {/** declaracion de rutas */}
+            {/** declarando un contenedor para todas las rutas de la aplicacion */}
+            <Routes>
+                {/** creando rutas */}
+                <Route path='/' element={<Welcome />} />
+                <Route path='/books' element={<ListBooks />} />
+                <Route path='/register' element={<FormRegister />} />
+            </Routes>
         </BrowserRouter>
     )
 }

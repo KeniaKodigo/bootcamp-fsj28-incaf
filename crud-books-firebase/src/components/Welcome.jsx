@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.main`
     display: grid;
@@ -30,6 +31,9 @@ export default function Welcome() {
             <section>
                 <Title>Discovery Your Next Great Read</Title>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, necessitatibus?</p>
+
+                {/** redireccionar a la lista de los libros */}
+                <Link to="/books">Ir a los Libros</Link>
             </section>
         </Container>
     ) 
