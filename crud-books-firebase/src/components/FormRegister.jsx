@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { dbStore } from '../firebase/appConfig'
+import { useForm } from 'react-hook-form'
+import { addDoc, collection } from 'firebase/firestore'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const ContainerForm = styled.section`
     margin: 1rem 3rem;
@@ -43,24 +47,55 @@ const Button = styled.input`
 console.log(dbStore)
 
 export default function FormRegister() {
+    const {
+        register,
+        handleSubmit,
+    } = useForm()
+
+    //creando una constante (funcion) para navegar entre rutas
+    const navigate = useNavigate()
+
+    //metodo para guardar los datos del libro
+    const saveBook = async (data) => {
+        console.log(data) //objeto del libro que la persona mande
+        //manejando errores
+        try{
+            //primero solicita la informacion de la bd (dbStore)
+            //segundo el nombre de la coleccion
+            //tercero los datos que vas a enviar
+            await addDoc(collection(dbStore, "books"), data)
+            Swal.fire({
+                title: "Se ha registrado correctamente!",
+                icon: "success",
+                draggable: true
+            });
+
+            //redireccionando a la lista de libros
+            navigate('/books')
+        }catch(error){
+            console.error("Error al guardar el libro", error)
+        }
+
+    }
+
     return (
         <>
             <Title>Registro de Libros</Title>
             <ContainerForm>
-                <form>
+                <form onSubmit={handleSubmit(saveBook)}>
                     <FormGroup>
                         <label>Titulo</label>
-                        <FormField type="text" className='form-control' placeholder='Ingresa el titulo del libro' />
+                        <FormField type="text" className='form-control' placeholder='Ingresa el titulo del libro' {...register("title")} />
                     </FormGroup>
 
                     <FormGroup>
                         <label>Autor</label>
-                        <FormField type="text" className='form-control' placeholder='Ingresa el autor del libro' />
+                        <FormField type="text" className='form-control' placeholder='Ingresa el autor del libro' {...register("author")} />
                     </FormGroup>
 
                     <FormGroup>
                         <label>Genero</label>
-                        <FormField as="select">
+                        <FormField as="select" {...register("geer")}>
                             <option value="">Seleccionar un genero...</option>
                             <option value="Romance">Romance</option>
                             <option value="Terror">Terror</option>
@@ -71,12 +106,12 @@ export default function FormRegister() {
 
                     <FormGroup>
                         <label>Fecha de Publicacion</label>
-                        <FormField type="date" className='form-control' />
+                        <FormField type="date" className='form-control' {...register("date_publication")} />
                     </FormGroup>
 
                     <FormGroup>
                         <label>Descripcion</label>
-                        <FormField type="text" className='form-control' />
+                        <FormField type="text" className='form-control' {...register("description")} />
                     </FormGroup>
 
                     <FormGroup>

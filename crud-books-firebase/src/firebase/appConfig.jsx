@@ -13,8 +13,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig); 
+const app = initializeApp(firebaseConfig); //conectarte al proyecto
 //creamos una constante para obtener la base de datos de nuestro proyecto de firebase
-const dbStore = getFirestore(app)
-export { dbStore }
+const dbStore = getFirestore(app) //base de datos
+export { dbStore } //objeto de la base de datos 
 
