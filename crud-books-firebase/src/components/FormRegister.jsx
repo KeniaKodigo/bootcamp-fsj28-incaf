@@ -43,7 +43,6 @@ const Button = styled.input`
     padding: .5rem;
     border: none;
 `
-
 console.log(dbStore)
 
 export default function FormRegister() {
@@ -75,7 +74,6 @@ export default function FormRegister() {
         }catch(error){
             console.error("Error al guardar el libro", error)
         }
-
     }
 
     return (
@@ -95,7 +93,7 @@ export default function FormRegister() {
 
                     <FormGroup>
                         <label>Genero</label>
-                        <FormField as="select" {...register("geer")}>
+                        <FormField as="select" {...register("gender")}>
                             <option value="">Seleccionar un genero...</option>
                             <option value="Romance">Romance</option>
                             <option value="Terror">Terror</option>

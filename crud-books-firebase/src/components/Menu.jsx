@@ -6,6 +6,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import ListBooks from './ListBooks';
 import Welcome from './Welcome';
 import FormRegister from './FormRegister';
+import EditBook from './EditBook';
 
 const Header = styled.header`
     color: #fff;
@@ -55,6 +56,8 @@ export default function Menu() {
                 <Route path='/' element={<Welcome />} />
                 <Route path='/books' element={<ListBooks />} />
                 <Route path='/register' element={<FormRegister />} />
+                {/** ruta con parametro */}
+                <Route path='/book/edit/:id_book' element={<EditBook />} />
             </Routes>
         </BrowserRouter>
     )
