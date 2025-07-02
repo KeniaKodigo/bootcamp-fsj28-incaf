@@ -1,0 +1,3 @@
+[submodule "jsonplaceholder-de"]
+	path = jsonplaceholder-de
+	url = https://github.com/KeniaKodigo/bootcamp-fsj28-incaf
